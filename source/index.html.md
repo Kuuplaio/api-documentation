@@ -1,15 +1,8 @@
 ---
-title: API Reference
+title: Mobbty API Reference
 
 language_tabs:
   - shell
-  - ruby
-  - python
-  - javascript
-
-toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
   - errors
@@ -19,171 +12,198 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+The Mobbty API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer). It has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. [JSON](http://www.json.org/) is returned by all API responses, including errors.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+**Never expose your secret API key in any public website's client-side code.**
 
 # Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> Example request:
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl "http://api.mobbty.com/feed" \
+  -u "Authorization: your_personal_key"
 ```
 
-```javascript
-const kittn = require('kittn');
+Authenticate your account when using the API by including your personal API key in the request. To obtain a key please contact your Mobbty account manager. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
 
-let api = kittn.authorize('meowmeowmeow');
-```
+Authentication to the API is performed via HTTP Basic Auth. Provide your API key as the basic auth username value. You do not need to provide a password.
 
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`-u mbbty_590c374516207590c3745165ee`.
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>mbbty_590c374516207590c3745165ee</code> with your personal API key.
 </aside>
 
-# Kittens
+# Offer feed
 
-## Get All Kittens
+## Get the Mobbty offer feed
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+>Example request:
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl "http://api.mobbty.com/feed" \
+  -u "Authorization: your_personal_key"
 ```
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+>Example response:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "offers": [
+    {
+      "offerid": "59089a4c60c511c1fa6812a1",
+      "countries": [
+        "US"
+      ],
+      "os": "ios",
+      "payout": 2.80,
+      "name": "DealDash - Bid to Shop & Save on Auction Games",
+      "icon": "http://is1.mzstatic.com/image/thumb/Purple111/v4/6f/18/d0/6f18d097-e019-71c0-5142-4efe6b5a367e/source/60x60bb.jpg",
+      "previewURL": "https://itunes.apple.com/us/app/dealdash-bid-to-shop-save/id965782383?mt=8&uo=4",
+      "bundleID": 965782383,
+      "click_url": "http://click.mobbty.com/ctrack?pubid=1234&offerid=59089a4c60c511c1fa6812a1"
+    }
+  ],
+  "hasmore": true,
+  "next_url": "http://api.mobbty.com/feed?skip=1&limit=1",
+  "result": "OK",
+  "count": 1569
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves all offers that you are eligible to run as a publisher.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://api.mobbty.com/feed`
 
-### URL Parameters
+### Query parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+Parameter | Default | Description
+--------- | ------- | -----------
+min_payout | 0 | Only return offers that have a greater or equal payout than the given value.
+max_payout | infinite | If set, the result will include offers that have less or equal payout than the given value.
+countries | all | Only return offers available in the given value. The value should be comma separated [ISO 3166-1 alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes.
+os | android,ios | Filter the response based on given os value.
+
+<aside class="warning">
+Although all offers that are part of the output are valid, be sure to <strong>at least</strong> check this endpoint every 10 minutes to avoid sending traffic to expired offers.
+</aside>
+
+# Conversions
+
+## Trigger a new conversion
+
+>Example request:
+
+```shell
+curl "http://api.mobbty.com/conversion/confirm" \
+  -u "Authorization: your_personal_key" \
+  -d click_id=mbbty_590c271cb2687
+```
+
+>Example response:
+
+```json
+{
+  "result": "OK",
+  "partner": "conversion registered!"
+}
+```
+This endpoint allows you to register conversion events for the traffic that you received from the Mobbty eco-system. 
+
+Parameter | Mandatory | Description
+--------- | ------- | -----------
+click_id | yes | Use this parameter to provide the click id that triggered the conversion event.
+
+**In case you are not able to provide the authentication upon calling the endpoint, contact your Mobbty account manager. On request we can bypass this flag and use ip-whitelisting.**
+
+<aside class="notice">
+Clients that use the Mobbty Adfraud protection module automatically receive the audit status in the response of this endpoint.
+</aside>
+
+<aside class="warning">
+Requests without <strong>click_id</strong> will be responded to with error code 400.
+</aside>
+
+## Audit conversion
+
+>Example request:
+
+```shell
+curl "http://api.mobbty.com/conversion/audit" \
+  -u "Authorization: your_personal_key" \
+  -d ip=87.11.20.192 \
+  -d user_agent=Mozilla%2F5.0%20(Linux%3B%20U%3B%20Android%202.2.1%3B%20en-us%3B%20ADR6400L%204G%20Build%2FFRG83D)%20AppleWebKit%2F533.1%20(KHTML%2C%20like%20Gecko)%20Version%2F4.0%20Mobile%20Safari%2F533.1%20air.com.speakingmax \
+  -d device_id=f07a13984f6d116a \
+  -d referrer_url=https%3A%2F%2Fapkpure.com%2Fsportsbet%2Fcom.sportsbet.guide%2Fdownload%3Ffrom%3Ddetails
+  -d click_time=2017-02-20T03:22:21 \
+  -d conversion_time=2017-02-20T03:28:52 \
+  -d bundle_id=com.sportsbet.guide \
+  -d offer_id=101bkj1l \
+  -d allowed_country[]=IT
+  
+```
+
+>Example response:
+
+```json
+{
+  "audit":
+    {
+      "country": "IT",
+      "fraud_score": 0.12,
+      "risk": "low",
+      "motivation": {
+        "duplicate_ip": false,
+        "duplicate_device_id": false,
+        "duplicate_fingerprint": false,
+        "proxy": false,
+        "server_hosting": false,
+        "cloud": false,
+        "open_ports": false,
+        "bad_ip": false,
+        "emulator": false,
+        "anomalies": {
+          "useragent": {
+            "old_device": false,
+            "old_os_version": false,
+            "non_existing_platform": false
+          },
+          "conversion_rate": {
+            "hourly": true,
+            "daily": false
+          },
+          "click_to_conversion": false,
+          "geo_mismatch": false
+        }
+      }
+    },
+  "result": "OK"
+}
+```
+
+This endpoint allows you to audit your conversion event on various forms of fraud. 
+
+Parameter | Mandatory | Description
+--------- | ------- | -----------
+ip | yes | The ip address of the device triggering the conversion event.
+user_agent | no | The [user agent](https://en.wikipedia.org/wiki/User_agent) string of the device triggering the conversion event.
+device_id | no | The [device ID](https://en.wikipedia.org/wiki/Unique_Device_Identification) of the device triggering the conversion event.
+referrer_url | no | The url the user was coming redirect from to the specific app
+click_time | no | The time (Y-m-d:h:i:s) the attributed click took place
+conversion_time | no | The time (Y-m-d:h:i:s) the conversion event took place
+bundle_id | no | The bundle id of the specific app in the app store
+offer_id | no | The unique identifier of the offer in the client system
+allowed_country (array) | no | The countries that are allowed to initiate conversion events for the specific offer
+
+<aside class="notice">
+This endpoint is part of the additional <strong>Adfraud protection</strong> module. Contact your Mobbty account manager for details, rates and access.
+</aside>
+
+<aside class="warning">
+By default the maximum QPM is set to <strong>200</strong>. If you would like to increase this number contact your Mobbty account manager for details and rates.
+</aside>
 

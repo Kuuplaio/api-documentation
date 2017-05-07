@@ -23,28 +23,48 @@ under the License.
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #393939 !default;
+$nav-bg: #48CFAD !default;
+$nav-bg-dark: #37BC9B !default;
+
 $examples-bg: #393939 !default;
 $code-bg: #292929 !default;
 $code-annotation-bg: #1c1c1c !default;
-$nav-subitem-bg: #262626 !default;
-$nav-active-bg: #2467af !default;
+
+$nav-subitem-bg: #434A54 !default;
+$nav-subitem-color: #F5F7FA !default;
+$nav-subitem-color-active: #434A54 !default;
+$nav-subitem-hover: #CCD1D9 !default;
+
+$nav-active-bg: #37BC9B !default;
+
 $lang-select-border: #000 !default;
 $lang-select-bg: #222 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
-$main-bg: #eaf2f6 !default;
-$aside-notice-bg: #8fbcd4 !default;
-$aside-warning-bg: #c97a7e !default;
-$aside-success-bg: #6ac174 !default;
+
+$main-bg: #FFF !default;
+
+$aside-notice-bg: #4A89DC !default;
+$aside-notice-shadow: #5D9CEC !default;
+
+$aside-warning-bg: #DA4453 !default;
+$aside-warning-shadow: #ED5565 !default;
+
+$aside-success-bg: #8CC152 !default;
+$aside-success-shadow: #A0D468 !default;
+
 $search-notice-bg: #c97a7e !default;
 
 
 // TEXT COLORS
 ////////////////////
 $main-text: #333 !default; // main content text color
-$nav-text: #fff !default;
+
+$nav-text: #333 !default;
 $nav-active-text: #fff !default;
+
+$nav-active-sub-text: #AAB2BD !default;
+
 $lang-select-text: #fff !default; // color of unselected language tab text
 $lang-select-active-text: #fff !default; // color of selected language tab text
 $lang-select-pressed-text: #fff !default; // color of language tab text when mouse is pressed
