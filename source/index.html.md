@@ -138,7 +138,8 @@ curl "http://api.mobbty.com/conversion/audit" \
   -d ip=87.11.20.192 \
   -d user_agent=Mozilla%2F5.0%20(Linux%3B%20U%3B%20Android%202.2.1%3B%20en-us%3B%20ADR6400L%204G%20Build%2FFRG83D)%20AppleWebKit%2F533.1%20(KHTML%2C%20like%20Gecko)%20Version%2F4.0%20Mobile%20Safari%2F533.1%20air.com.speakingmax \
   -d device_id=f07a13984f6d116a \
-  -d referrer_url=https%3A%2F%2Fapkpure.com%2Fsportsbet%2Fcom.sportsbet.guide%2Fdownload%3Ffrom%3Ddetails
+  -d referrer_url=https%3A%2F%2Fapkpure.com%2Fsportsbet%2Fcom.sportsbet.guide%2Fdownload%3Ffrom%3Ddetails \
+  -d source_id=1323 \
   -d click_time=2017-02-20T03:22:21 \
   -d conversion_time=2017-02-20T03:28:52 \
   -d bundle_id=com.sportsbet.guide \
@@ -161,23 +162,19 @@ curl "http://api.mobbty.com/conversion/audit" \
         "duplicate_device_id": false,
         "duplicate_fingerprint": false,
         "proxy": false,
-        "server_hosting": false,
-        "cloud": false,
         "open_ports": false,
         "bad_ip": false,
         "emulator": false,
         "anomalies": {
           "useragent": {
-            "old_device": false,
             "old_os_version": false,
-            "non_existing_platform": false
+            "non_mobile_platform": false
           },
           "conversion_rate": {
             "hourly": true,
             "daily": false
           },
-          "click_to_conversion": false,
-          "geo_mismatch": false
+          "click_to_conversion": false
         }
       }
     },
@@ -193,6 +190,7 @@ ip | yes | The ip address of the device triggering the conversion event.
 user_agent | no | The [user agent](https://en.wikipedia.org/wiki/User_agent) string of the device triggering the conversion event.
 device_id | no | The [device ID](https://en.wikipedia.org/wiki/Unique_Device_Identification) of the device triggering the conversion event.
 referrer_url | no | The url the user was coming redirect from to the specific app
+source_id | no | The unique identiefier of the source in the client system
 click_time | no | The time (Y-m-d:h:i:s) the attributed click took place
 conversion_time | no | The time (Y-m-d:h:i:s) the conversion event took place
 bundle_id | no | The bundle id of the specific app in the app store
