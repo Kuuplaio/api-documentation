@@ -379,7 +379,8 @@ Requests without <strong>click_id</strong> will be responded to with error code 
   -d <span class="nv">ip</span><span class="o">=</span>87.11.20.192 <span class="se">\</span>
   -d <span class="nv">user_agent</span><span class="o">=</span>Mozilla%2F5.0%20<span class="o">(</span>Linux%3B%20U%3B%20Android%202.2.1%3B%20en-us%3B%20ADR6400L%204G%20Build%2FFRG83D<span class="o">)</span>%20AppleWebKit%2F533.1%20<span class="o">(</span>KHTML%2C%20like%20Gecko<span class="o">)</span>%20Version%2F4.0%20Mobile%20Safari%2F533.1%20air.com.speakingmax <span class="se">\</span>
   -d <span class="nv">device_id</span><span class="o">=</span>f07a13984f6d116a <span class="se">\</span>
-  -d <span class="nv">referrer_url</span><span class="o">=</span>https%3A%2F%2Fapkpure.com%2Fsportsbet%2Fcom.sportsbet.guide%2Fdownload%3Ffrom%3Ddetails
+  -d <span class="nv">referrer_url</span><span class="o">=</span>https%3A%2F%2Fapkpure.com%2Fsportsbet%2Fcom.sportsbet.guide%2Fdownload%3Ffrom%3Ddetails <span class="se">\</span>
+  -d <span class="nv">source_id</span><span class="o">=</span>1323 <span class="se">\</span>
   -d <span class="nv">click_time</span><span class="o">=</span>2017-02-20T03:22:21 <span class="se">\</span>
   -d <span class="nv">conversion_time</span><span class="o">=</span>2017-02-20T03:28:52 <span class="se">\</span>
   -d <span class="nv">bundle_id</span><span class="o">=</span>com.sportsbet.guide <span class="se">\</span>
@@ -401,23 +402,19 @@ Requests without <strong>click_id</strong> will be responded to with error code 
         </span><span class="s2">"duplicate_device_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duplicate_fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"proxy"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"server_hosting"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cloud"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"open_ports"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"bad_ip"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"emulator"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"anomalies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="s2">"useragent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"old_device"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"old_os_version"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"non_existing_platform"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="s2">"non_mobile_platform"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="s2">"conversion_rate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"hourly"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="s2">"daily"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
           </span><span class="p">},</span><span class="w">
-          </span><span class="s2">"click_to_conversion"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"geo_mismatch"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+          </span><span class="s2">"click_to_conversion"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -452,6 +449,11 @@ Requests without <strong>click_id</strong> will be responded to with error code 
 <td>referrer_url</td>
 <td>no</td>
 <td>The url the user was coming redirect from to the specific app</td>
+</tr>
+<tr>
+<td>source_id</td>
+<td>no</td>
+<td>The unique identiefier of the source in the client system</td>
 </tr>
 <tr>
 <td>click_time</td>
