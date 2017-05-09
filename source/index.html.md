@@ -181,7 +181,7 @@ curl "http://api.mobbty.com/conversion/audit" \
 }
 ```
 
-This endpoint allows you to audit your conversion event on various forms of fraud. 
+This endpoint allows you to audit your conversion event on various forms of ad fraud. 
 
 Parameter | Mandatory | Description
 --------- | ------- | -----------
