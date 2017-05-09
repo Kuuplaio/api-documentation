@@ -162,7 +162,6 @@ curl "http://api.mobbty.com/conversion/audit" \
         "duplicate_device_id": false,
         "duplicate_fingerprint": false,
         "proxy": false,
-        "open_ports": false,
         "bad_ip": false,
         "emulator": false,
         "anomalies": {
