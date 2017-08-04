@@ -22,19 +22,12 @@ The Mobbty API is organized around [REST](http://en.wikipedia.org/wiki/Represent
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "http://api.mobbty.com/feed" \
-  -u "Authorization: your_personal_key"
+curl "http://api.mobbty.com/feed?key=your_personal_key"
 ```
 
 Authenticate your account when using the API by including your personal API key in the request. To obtain a key please contact your Mobbty account manager. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
 
-Authentication to the API is performed via HTTP Basic Auth. Provide your API key as the basic auth username value. You do not need to provide a password.
-
-`-u mbbty_590c374516207590c3745165ee`.
-
-<aside class="notice">
-You must replace <code>mbbty_590c374516207590c3745165ee</code> with your personal API key.
-</aside>
+For all endpoint except the offer feed, authentication to the API is performed via Bearer token. To obtain your Bearer token make a POST first to the login endpoint.
 
 # Offer feed
 
@@ -43,8 +36,7 @@ You must replace <code>mbbty_590c374516207590c3745165ee</code> with your persona
 >Example request:
 
 ```shell
-curl "http://api.mobbty.com/feed" \
-  -u "Authorization: your_personal_key"
+curl "http://api.mobbty.com/feed?key=your_personal_key"
 ```
 
 >Example response:
@@ -83,6 +75,7 @@ This endpoint retrieves all offers that you are eligible to run as a publisher.
 
 Parameter | Default | Description
 --------- | ------- | -----------
+key | required | you personal api token
 min_payout | 0 | Only return offers that have a greater or equal payout than the given value.
 max_payout | infinite | If set, the result will include offers that have less or equal payout than the given value.
 countries | all | Only return offers available in the given value. The value should be comma separated [ISO 3166-1 alpha 2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes.
@@ -100,7 +93,7 @@ Although all offers that are part of the output are valid, be sure to <strong>at
 
 ```shell
 curl "http://api.mobbty.com/conversion/confirm" \
-  -u "Authorization: your_personal_key" \
+  -u "Bearer: your_personal_token" \
   -d click_id=mbbty_590c271cb2687
 ```
 
@@ -134,7 +127,7 @@ Requests without <strong>click_id</strong> will be responded to with error code 
 
 ```shell
 curl "http://api.mobbty.com/conversion/audit" \
-  -u "Authorization: your_personal_key" \
+  -u "Bearer: your_personal_token" \
   -d ip=87.11.20.192 \
   -d user_agent=Mozilla%2F5.0%20(Linux%3B%20U%3B%20Android%202.2.1%3B%20en-us%3B%20ADR6400L%204G%20Build%2FFRG83D)%20AppleWebKit%2F533.1%20(KHTML%2C%20like%20Gecko)%20Version%2F4.0%20Mobile%20Safari%2F533.1%20air.com.speakingmax \
   -d device_id=f07a13984f6d116a \
