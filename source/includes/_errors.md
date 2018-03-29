@@ -2,7 +2,6 @@
 
 The Mobbty API uses the following error codes:
 
-
 Error Code | Meaning
 ---------- | -------
 400 | Bad Request -- Your request was malformed or incomplete
