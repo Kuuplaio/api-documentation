@@ -1,4 +1,20 @@
 @font-face {
+  font-family: 'Muli-Black';
+  src:font-url('Muli-Black.eot');
+  src:font-url('Muli-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-Regular';
+  src:font-url('Lato-Regular.eot');
+  src:font-url('Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'slate';
   src:font-url('slate.eot?-syv14m');
   src:font-url('slate.eot?#iefix-syv14m') format('embedded-opentype'),

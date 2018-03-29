@@ -22,10 +22,10 @@ The Kuup.la API is organized around [REST](http://en.wikipedia.org/wiki/Represen
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "https://api.kuup.la/feed?key=your_personal_key"
+curl "https://YOUR_API_DOMAIN/feed?key=your_personal_key"
 ```
 
-Authenticate your account when using the API by including your personal API key in the request. To obtain a key please contact your Kuup.la account manager. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
+Authenticate your account when using the API by including your personal API key in the request. To obtain a key and the api domain to use, please contact your Kuup.la account manager. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
 
 For all endpoint except the offer feed, authentication to the API is performed via Bearer token. To obtain your Bearer token make a POST first to the login endpoint.
 
@@ -36,7 +36,7 @@ For all endpoint except the offer feed, authentication to the API is performed v
 >Example request:
 
 ```shell
-curl "https://api.kuup.la/feed?key=your_personal_key"
+curl "https://YOUR_API_DOMAIN/feed?key=your_personal_key"
 ```
 
 >Example response:
@@ -73,7 +73,7 @@ This endpoint retrieves all offers that you are eligible to run as a publisher.
 
 ### HTTP Request
 
-`GET https://api.kuup.la/feed`
+`GET https://YOUR_API_DOMAIN/feed`
 
 ### Query parameters
 

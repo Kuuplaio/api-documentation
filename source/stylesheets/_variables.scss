@@ -30,10 +30,10 @@ $examples-bg: #393939 !default;
 $code-bg: #292929 !default;
 $code-annotation-bg: #1c1c1c !default;
 
-$nav-subitem-bg: #434A54 !default;
+$nav-subitem-bg: #3099fb !default;
 $nav-subitem-color: #F5F7FA !default;
 $nav-subitem-color-active: #434A54 !default;
-$nav-subitem-hover: #CCD1D9 !default;
+$nav-subitem-hover: #3099fb !default;
 
 $nav-active-bg: #0099e5 !default;
 
@@ -88,12 +88,12 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 // FONTS
 ////////////////////
 %default-font {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-family: "Lato-Regular", Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
   font-size: 13px;
 }
 
 %header-font {
-  @extend %default-font;
+  font-family: "Muli-Black", Helvetica;
   font-weight: bold;
 }
 
