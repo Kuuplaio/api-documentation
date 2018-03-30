@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Kuup.la API Reference</title>
+    <title>kuup.la API Reference</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic|Roboto|Roboto+Condensed|Pacifico" rel="stylesheet">
     <style>
       .highlight table td { padding: 5px; }
@@ -225,7 +225,7 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>The Kuup.la API is organized around <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>. It has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. <a href="http://www.json.org/">JSON</a> is returned by all API responses, including errors.</p>
+<p>The kuup.la API is organized around <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>. It has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. <a href="http://www.json.org/">JSON</a> is returned by all API responses, including errors.</p>
 
 <p><strong>Never expose your secret API key in any public website&rsquo;s client-side code.</strong></p>
 
@@ -237,13 +237,13 @@
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"https://YOUR_API_DOMAIN/feed?key=your_personal_key"</span>
 </code></pre>
-<p>Authenticate your account when using the API by including your personal API key in the request. To obtain a key and the api domain to use, please contact your Kuup.la account manager. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
+<p>Authenticate your account when using the API by including your personal API key in the request. To obtain a key and the api domain to use, please contact your kuup.la account manager. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
 
 <p>For all endpoint except the offer feed, authentication to the API is performed via Bearer token. To obtain your Bearer token make a POST first to the login endpoint.</p>
 
 <h1 id="offer-feed">Offer feed</h1>
 
-<h2 id="get-the-kuup-la-offer-feed">Get the Kuup.la offer feed</h2>
+<h2 id="get-the-kuup-la-offer-feed">Get the kuup.la offer feed</h2>
 
 <blockquote>
 <p>Example request:</p>
