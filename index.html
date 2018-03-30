@@ -235,9 +235,9 @@
 <p>Example request:</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"https://api.kuup.la/feed?key=your_personal_key"</span>
+curl <span class="s2">"https://YOUR_API_DOMAIN/feed?key=your_personal_key"</span>
 </code></pre>
-<p>Authenticate your account when using the API by including your personal API key in the request. To obtain a key please contact your Kuup.la account manager. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
+<p>Authenticate your account when using the API by including your personal API key in the request. To obtain a key and the api domain to use, please contact your Kuup.la account manager. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
 
 <p>For all endpoint except the offer feed, authentication to the API is performed via Bearer token. To obtain your Bearer token make a POST first to the login endpoint.</p>
 
@@ -248,7 +248,7 @@ curl <span class="s2">"https://api.kuup.la/feed?key=your_personal_key"</span>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.kuup.la/feed?key=your_personal_key"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://YOUR_API_DOMAIN/feed?key=your_personal_key"</span>
 </code></pre>
 <blockquote>
 <p>Example response:</p>
@@ -283,7 +283,7 @@ curl <span class="s2">"https://api.kuup.la/feed?key=your_personal_key"</span>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://api.kuup.la/feed</code></p>
+<p><code class="prettyprint">GET https://YOUR_API_DOMAIN/feed</code></p>
 
 <h3 id="query-parameters">Query parameters</h3>
 
