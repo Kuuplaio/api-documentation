@@ -1,5 +1,5 @@
 ---
-title: Kuup.la API Reference
+title: kuup.la API Reference
 
 language_tabs:
   - shell
@@ -12,7 +12,7 @@ search: true
 
 # Introduction
 
-The Kuup.la API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer). It has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. [JSON](http://www.json.org/) is returned by all API responses, including errors.
+The kuup.la API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer). It has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. [JSON](http://www.json.org/) is returned by all API responses, including errors.
 
 **Never expose your secret API key in any public website's client-side code.**
 
@@ -25,13 +25,13 @@ The Kuup.la API is organized around [REST](http://en.wikipedia.org/wiki/Represen
 curl "https://YOUR_API_DOMAIN/feed?key=your_personal_key"
 ```
 
-Authenticate your account when using the API by including your personal API key in the request. To obtain a key and the api domain to use, please contact your Kuup.la account manager. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
+Authenticate your account when using the API by including your personal API key in the request. To obtain a key and the api domain to use, please contact your kuup.la account manager. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
 
 For all endpoint except the offer feed, authentication to the API is performed via Bearer token. To obtain your Bearer token make a POST first to the login endpoint.
 
 # Offer feed
 
-## Get the Kuup.la offer feed
+## Get the kuup.la offer feed
 
 >Example request:
 
