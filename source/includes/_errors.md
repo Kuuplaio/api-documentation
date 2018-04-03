@@ -1,6 +1,6 @@
 # Errors
 
-The Mobbty API uses the following error codes:
+The Kuup.la API uses the following error codes:
 
 Error Code | Meaning
 ---------- | -------

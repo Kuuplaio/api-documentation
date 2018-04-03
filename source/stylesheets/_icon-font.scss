@@ -1,7 +1,15 @@
 @font-face {
-  font-family: 'Muli-Black';
-  src:font-url('Muli-Black.eot');
-  src:font-url('Muli-Black.ttf') format('truetype');
+  font-family: 'Poppins-Black';
+  src:font-url('Poppins-Black.eot');
+  src:font-url('Poppins-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src:font-url('Poppins-Bold.eot');
+  src:font-url('Poppins-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
